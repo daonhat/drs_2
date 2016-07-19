@@ -26,18 +26,23 @@ gem "i18n-js", ">= 3.0.0.rc11"
 gem "groupdate"
 gem "chartkick"
 gem "whenever", require: false
+gem 'aws-sdk', '< 2.0'
 
 source "https://rails-assets.org/" do
   gem "rails-assets-adminlte"
 end
 
+group :production do
+  gem "pg"
+end
+
 group :development, :test do
   gem "byebug"
-  gem "sqlite3"
 end
 
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
   gem "faker", "1.4.2"
+  gem "sqlite3"
 end

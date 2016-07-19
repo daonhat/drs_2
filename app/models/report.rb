@@ -35,7 +35,7 @@ class Report < ActiveRecord::Base
 
   private
   def check_report_date
-    errors.add :reports, I18n.t("reports.errors.no_future") if
+    errors.add :reports, "Can not create report in future" if
       report_date && report_date > Date.today
   end
 end

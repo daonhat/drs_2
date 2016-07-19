@@ -36,8 +36,8 @@ class RequestsController < ApplicationController
   def update
     if @request.update_attributes request_params
       flash[:notice] = t :update_success
-      Notification.create_for_users(current_user.profile.division_id,
-        request_params[:request][:status]) if request_params[:request][:status]
+      Notification.create_for_users(params[:request][:status],
+        @request.user_id) if params[:request][:status]
       respond_to do |format|
         format.html {redirect_to requests_path}
         format.js

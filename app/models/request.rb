@@ -8,7 +8,7 @@ class Request < ActiveRecord::Base
   validate :check_time
   validate :check_compensation_time
 
-  enum request_type: ["il", "lo", "le"]
+  enum request_type: ["In late", "Leave out", "Leave Early"]
   enum status: ["waiting", "approved", "not_approve"]
 
   scope :all_division, -> manager_division_id {where "user_id IN

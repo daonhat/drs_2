@@ -1,5 +1,5 @@
 <%= simple_form_for @request, html: {class: "dn-form-request"} do |f| %>
-
+  <%= render "shared/error_messages", object: @request %>
   <div class="form-group">
     <%= f.label :request_type %>
     <%= f.select :request_type,
