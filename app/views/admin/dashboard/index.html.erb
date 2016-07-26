@@ -12,3 +12,60 @@
     </div>
   </div>
 </div>
+
+<%= form_tag admin_root_path, method: :get, id: "form-admin-date" do %>
+  <div>
+    <%= date_field_tag :date, params[:date],
+      class: "form-control dn-admin-date-field" %>
+  </div>
+<% end %>
+
+<div id="dn-chart-report" data-chart="<%= @data.map {|k,v| [k, v]} %>"></div>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 10px auto"></div>
+
+<script type="text/javascript">
+  $(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Request'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Chrome',
+                y: 24.03
+            }, {
+                name: 'Firefox',
+                y: 10.38
+            }, {
+                name: 'Safari',
+                y: 4.77
+            }]
+        }]
+    });
+});
+</script>

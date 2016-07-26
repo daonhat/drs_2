@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require adminlte
 //= require datepicker
+//= require highcharts
 //= require_tree .
 
 $(document).on('ready', function() {
