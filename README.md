@@ -2,7 +2,10 @@
 Daily Report System
 # ABOUT PROJECT
 
-This is a project 2 for trainee in Framgia Viet Nam. Forked from https://github.com/framgia/drs_2 . It's a website for trainee sent request or report every day and manager approve request , add member to division.
+- This is a project 2 for trainee in Framgia Viet Nam. Forked from https://github.com/framgia/drs_2 . It's a website for trainee sent request or report every day and manager approve request , add member to division.
+
+- Project is implemented in 10 days.
+
 
 * User
 
@@ -38,9 +41,9 @@ Website is deployed at: https://fr-drs-nd.herokuapp.com
 
 # INSTALL PROJECT
 
-Install Ruby
-Install Rails 4.2.6
-Download source code at branch develop in https://github.com/framgia/drs_2 and run
-bundle install
-rake db:migrate
-rake db:seed
+- Install Ruby
+- Install Rails 4.2.6
+- Download source code at branch develop in https://github.com/framgia/drs_2 and run
+  - bundle install
+  - rake db:migrate
+  -  rake db:seed
